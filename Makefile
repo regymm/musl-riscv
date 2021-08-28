@@ -37,11 +37,11 @@ GENH = obj/include/bits/alltypes.h obj/include/bits/syscall.h
 GENH_INT = obj/src/internal/version.h
 IMPH = $(addprefix $(srcdir)/, src/internal/stdio_impl.h src/internal/pthread_impl.h src/internal/locale_impl.h src/internal/libc.h)
 
-LDFLAGS =
+LDFLAGS = -fPIC -fPIE
 LDFLAGS_AUTO =
 LIBCC = -lgcc
 CPPFLAGS =
-CFLAGS =
+CFLAGS = -D__riscv_soft_float -D__riscv_float_abi_soft -fPIC -fPIE
 CFLAGS_AUTO = -Os -pipe
 CFLAGS_C99FSE = -std=c99 -ffreestanding -nostdinc 
 
